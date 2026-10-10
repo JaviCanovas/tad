@@ -402,7 +402,7 @@ export async function getBodyGeoJSON(svgUrl = 'assets/cuerpo.svg') {
   
   // Crear un contenedor SVG oculto en el DOM temporal para muestrear puntos con getPointAtLength
   const tempSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  tempSvg.setAttribute('viewBox', '0 0 700 500');
+  tempSvg.setAttribute('viewBox', '0 0 700 540');
   tempSvg.style.position = 'absolute';
   tempSvg.style.top = '-9999px';
   tempSvg.style.left = '-9999px';

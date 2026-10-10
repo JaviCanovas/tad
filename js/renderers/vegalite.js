@@ -64,8 +64,8 @@ export async function render(container, aggregatedData, options = {}) {
   const spec = {
     $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
     description: 'Mapa corporal de lesiones del Liverpool FC en Vega-Lite',
-    width: 680,
-    height: 480,
+    width: 700,
+    height: 530,
     autosize: {
       type: 'fit',
       contains: 'padding'
@@ -135,7 +135,7 @@ export async function render(container, aggregatedData, options = {}) {
         },
         encoding: {
           x: { field: 'x', type: 'quantitative', scale: { domain: [0, 700] }, axis: null },
-          y: { field: 'y', type: 'quantitative', scale: { domain: [0, 500] }, axis: null },
+          y: { field: 'y', type: 'quantitative', scale: { domain: [0, 540] }, axis: null },
           text: { field: 'text', type: 'nominal' }
         }
       }
