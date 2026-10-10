@@ -1,0 +1,13 @@
+{
+  "name": "tad-visualizacion-lesiones",
+  "version": "1.0.0",
+  "description": "Estudio comparativo de visualización de datos de lesiones con D3.js, Apache ECharts, Plotly.js y Vega-Lite",
+  "scripts": {
+    "dev": "npx --yes serve -l 8080 .",
+    "start": "npx --yes serve -l 8080 .",
+    "serve": "python -m http.server 8080"
+  },
+  "keywords": ["d3", "echarts", "plotly", "vegalite", "dataviz"],
+  "author": "Máster Big Data",
+  "license": "MIT"
+}

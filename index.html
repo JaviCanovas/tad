@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio Comparativo: Visualización Anatómica de Lesiones (Liverpool FC)</title>
+  <meta name="description" content="Comparativa técnica y académica de 4 librerías de visualización web (D3.js, Apache ECharts, Plotly.js y Vega-Lite) implementando una misma visualización del mapa anatómico corporal de lesiones.">
+  
+  <!-- Tipografía Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos del Proyecto -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Librerías de Visualización por CDN (Versiones fijas) -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.30.0/plotly.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.28.0/build/vega.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.18.0/build/vega-lite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.25.0/build/vega-embed.min.js"></script>
+</head>
+<body>
+
+  <!-- CABECERA PRINCIPAL -->
+  <header class="app-header" role="banner">
+    <div class="header-inner">
+      <div class="brand-section">
+        <h1 class="app-title">
+          <span>Mapa de Lesiones Liverpool FC</span>
+          <span class="app-badge">Survey 4 Librerías</span>
+        </h1>
+        <p class="app-subtitle">Evaluación técnica y comparativa entre D3.js, Apache ECharts, Plotly.js y Vega-Lite</p>
+      </div>
+
+      <!-- CONTROLES GLOBALES -->
+      <div class="controls-section">
+        <!-- Selector de Jugador -->
+        <div class="player-selector-group">
+          <label for="player-select" class="selector-label">Jugador:</label>
+          <select id="player-select" class="custom-select" aria-label="Filtrar por jugador">
+            <option value="all">Cargando jugadores...</option>
+          </select>
+        </div>
+
+        <!-- Botonera de Librerías -->
+        <nav class="library-switch-group" id="library-buttons" aria-label="Selector de librería de visualización">
+          <button type="button" class="lib-btn active" id="btn-d3" data-lib="d3" aria-pressed="true">
+            <span>D3.js</span>
+          </button>
+          <button type="button" class="lib-btn" id="btn-echarts" data-lib="echarts" aria-pressed="false">
+            <span>ECharts</span>
+          </button>
+          <button type="button" class="lib-btn" id="btn-plotly" data-lib="plotly" aria-pressed="false">
+            <span>Plotly.js</span>
+          </button>
+          <button type="button" class="lib-btn" id="btn-vegalite" data-lib="vegalite" aria-pressed="false">
+            <span>Vega-Lite</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="main-container" role="main">
+    
+    <!-- DASHBOARD: VISUALIZACIÓN Y PANEL NO LOCALIZABLE -->
+    <div class="dashboard-grid">
+      
+      <!-- Panel de la Visualización Anatómica -->
+      <section class="chart-panel" aria-labelledby="chart-title">
+        <header class="panel-header">
+          <h2 id="chart-title" class="panel-title">
+            <span>🧍 Distribución Anatómica Corporal</span>
+          </h2>
+          <span class="panel-subtitle">Intensidad por días perdidos acumulados (Escala √)</span>
+        </header>
+
+        <!-- Contenedor único donde se renderiza la librería activa -->
+        <div id="chart-container" class="chart-viewport" aria-live="polite">
+          <div class="loading-state">Inicializando visualización...</div>
+        </div>
+      </section>
+
+      <!-- Panel Lateral: Lesiones No Localizables -->
+      <aside class="side-panel" aria-labelledby="side-panel-title">
+        <header class="panel-header">
+          <h2 id="side-panel-title" class="panel-title">
+            <span>📋 Lesiones No Localizables</span>
+          </h2>
+        </header>
+
+        <div id="non-locatable-summary" class="non-locatable-summary">
+          <!-- Métricas de resumen generadas por main.js -->
+        </div>
+
+        <div id="non-locatable-list" class="nl-cards-container">
+          <!-- Tarjetas generadas por main.js -->
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- FICHA DE CAPACIDADES Y MATRIZ DE EVALUACIÓN -->
+    <section class="capability-section" id="capability-matrix" aria-labelledby="capability-heading">
+      <div class="capability-header" id="capability-toggle" role="button" tabindex="0" aria-expanded="true" aria-controls="capability-content">
+        <div class="capability-title-group">
+          <span class="toggle-icon" aria-hidden="true">▲</span>
+          <h2 id="capability-heading" class="capability-header-title">Ficha de Capacidades de la Librería Activa</h2>
+        </div>
+        <span class="panel-subtitle">Haz clic para expandir / contraer</span>
+      </div>
+
+      <div class="capability-content" id="capability-content">
+        <!-- Tabla dinámica generada por main.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA CON MÉTRICAS Y PERFORMANCE -->
+  <footer class="app-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <span>Trabajo Académico de Visualización de Datos</span>
+      </div>
+      <div class="footer-metrics">
+        <div class="metric-pill">
+          <span>Librería:</span>
+          <strong id="footer-library">D3.js (v7)</strong>
+        </div>
+        <div class="metric-pill">
+          <span>Datos:</span>
+          <strong id="footer-injuries">82 lesiones</strong>
+        </div>
+        <div class="metric-pill">
+          <span>Total:</span>
+          <strong id="footer-days">0 días</strong>
+        </div>
+        <div class="metric-pill latency">
+          <span>Render Latency:</span>
+          <strong id="footer-render-time">0.00 ms</strong>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script principal como Módulo ES -->
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540" width="100%" height="100%" class="human-body-svg">
+  <defs>
+    <style>
+      .view-label {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        fill: #64748b;
+        letter-spacing: 1.5px;
+        text-anchor: middle;
+      }
+      .body-zone {
+        fill: #e2e8f0;
+        stroke: #94a3b8;
+        stroke-width: 1.3;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        transition: fill 0.25s ease, stroke 0.25s ease, filter 0.2s ease;
+        cursor: pointer;
+      }
+      .body-zone:hover {
+        stroke: #0f172a;
+        stroke-width: 2.5;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+      }
+    </style>
+  </defs>
+
+  <!-- TITULOS DE LAS VISTAS -->
+  <text x="175" y="22" class="view-label">VISTA FRONTAL</text>
+  <text x="525" y="22" class="view-label">VISTA POSTERIOR</text>
+
+  <!-- LINEA SEPARADORA SUTIL -->
+  <line x1="350" y1="15" x2="350" y2="465" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4" />
+
+  <!-- ========================================== -->
+  <!-- VISTA FRONTAL (Centro X = 175)             -->
+  <!-- ========================================== -->
+  <g id="vista-frontal" class="body-view">
+    <!-- Cabeza -->
+    <path id="front-cabeza" class="body-zone zona-cabeza" data-zone="Cabeza" name="Cabeza"
+          d="M 160 48 C 160 38, 166 32, 175 32 C 184 32, 190 38, 190 48 C 190 57, 185 66, 182 76 L 181 84 L 169 84 L 168 76 C 165 66, 160 57, 160 48 Z" />
+
+    <!-- Hombros (Izquierdo y Derecho) -->
+    <path id="front-hombro-izq" class="body-zone zona-hombro" data-zone="Hombro" name="Hombro"
+          d="M 167 84 L 142 92 C 134 95, 126 101, 122 109 L 119 118 L 134 122 L 144 106 L 152 98 L 167 94 Z" />
+    <path id="front-hombro-der" class="body-zone zona-hombro" data-zone="Hombro" name="Hombro"
+          d="M 183 84 L 208 92 C 216 95, 224 101, 228 109 L 231 118 L 216 122 L 206 106 L 198 98 L 183 94 Z" />
+
+    <!-- Torso (Pecho y Abdomen - Solo Frontal) -->
+    <path id="front-torso" class="body-zone zona-torso" data-zone="Torso" name="Torso"
+          d="M 167 94 L 152 98 L 144 106 L 141 128 L 145 158 L 148 183 L 202 183 L 205 158 L 209 128 L 206 106 L 198 98 L 183 94 Z" />
+
+    <!-- Brazos (Bíceps y Antebrazos) -->
+    <path id="front-brazo-izq" class="body-zone zona-brazo" data-zone="Brazo" name="Brazo"
+          d="M 119 118 L 112 148 L 105 186 L 100 223 L 114 224 L 123 186 L 131 148 L 134 122 Z" />
+    <path id="front-brazo-der" class="body-zone zona-brazo" data-zone="Brazo" name="Brazo"
+          d="M 231 118 L 238 148 L 245 186 L 250 223 L 236 224 L 227 186 L 219 148 L 216 122 Z" />
+
+    <!-- Manos -->
+    <path id="front-mano-izq" class="body-zone zona-mano" data-zone="Mano" name="Mano"
+          d="M 100 223 L 94 248 C 92 256, 92 264, 96 268 C 100 272, 107 270, 110 262 L 114 243 L 114 224 Z" />
+    <path id="front-mano-der" class="body-zone zona-mano" data-zone="Mano" name="Mano"
+          d="M 250 223 L 256 248 C 258 256, 258 264, 254 268 C 250 272, 243 270, 240 262 L 236 243 L 236 224 Z" />
+
+    <!-- Cadera (Laterales) -->
+    <path id="front-cadera-izq" class="body-zone zona-cadera" data-zone="Cadera" name="Cadera"
+          d="M 148 183 L 137 194 C 134 203, 134 214, 137 223 L 148 225 L 155 194 L 158 183 Z" />
+    <path id="front-cadera-der" class="body-zone zona-cadera" data-zone="Cadera" name="Cadera"
+          d="M 202 183 L 213 194 C 216 203, 216 214, 213 223 L 202 225 L 195 194 L 192 183 Z" />
+
+    <!-- Pelvis e Ingle (Centro - Solo Frontal) -->
+    <path id="front-pelvis" class="body-zone zona-pelvis-e-ingle" data-zone="Pelvis e Ingle" name="Pelvis e Ingle"
+          d="M 158 183 L 155 194 L 148 225 L 160 234 L 175 236 L 190 234 L 202 225 L 195 194 L 192 183 Z" />
+
+    <!-- Muslos -->
+    <path id="front-muslo-izq" class="body-zone zona-muslo" data-zone="Muslo" name="Muslo"
+          d="M 137 223 L 138 255 C 139 280, 142 305, 144 330 L 168 330 C 172 305, 174 270, 175 236 L 160 234 L 148 225 Z" />
+    <path id="front-muslo-der" class="body-zone zona-muslo" data-zone="Muslo" name="Muslo"
+          d="M 213 223 L 212 255 C 211 280, 208 305, 206 330 L 182 330 C 178 305, 176 270, 175 236 L 190 234 L 202 225 Z" />
+
+    <!-- Rodillas -->
+    <path id="front-rodilla-izq" class="body-zone zona-rodilla" data-zone="Rodilla" name="Rodilla"
+          d="M 144 330 L 143 348 C 143 358, 145 365, 146 368 L 166 368 C 168 363, 169 353, 168 330 Z" />
+    <path id="front-rodilla-der" class="body-zone zona-rodilla" data-zone="Rodilla" name="Rodilla"
+          d="M 206 330 L 207 348 C 207 358, 205 365, 204 368 L 184 368 C 182 363, 181 353, 182 330 Z" />
+
+    <!-- Pantorrillas / Espinillas -->
+    <path id="front-pantorrilla-izq" class="body-zone zona-pantorrilla" data-zone="Pantorrilla" name="Pantorrilla"
+          d="M 146 368 C 143 388, 143 410, 148 438 L 164 438 C 168 410, 167 388, 166 368 Z" />
+    <path id="front-pantorrilla-der" class="body-zone zona-pantorrilla" data-zone="Pantorrilla" name="Pantorrilla"
+          d="M 204 368 C 207 388, 207 410, 202 438 L 186 438 C 182 410, 183 388, 184 368 Z" />
+
+    <!-- Tobillos -->
+    <path id="front-tobillo-izq" class="body-zone zona-tobillo" data-zone="Tobillo" name="Tobillo"
+          d="M 148 438 L 147 452 L 165 452 L 164 438 Z" />
+    <path id="front-tobillo-der" class="body-zone zona-tobillo" data-zone="Tobillo" name="Tobillo"
+          d="M 202 438 L 203 452 L 185 452 L 186 438 Z" />
+
+    <!-- Pies -->
+    <path id="front-pie-izq" class="body-zone zona-pie" data-zone="Pie" name="Pie"
+          d="M 147 452 L 138 464 C 135 469, 140 472, 150 472 L 165 472 L 165 452 Z" />
+    <path id="front-pie-der" class="body-zone zona-pie" data-zone="Pie" name="Pie"
+          d="M 203 452 L 212 464 C 215 469, 210 472, 200 472 L 185 472 L 185 452 Z" />
+  </g>
+
+
+  <!-- ========================================== -->
+  <!-- VISTA POSTERIOR (Centro X = 525)           -->
+  <!-- ========================================== -->
+  <g id="vista-posterior" class="body-view">
+    <!-- Cabeza (Nuca) -->
+    <path id="back-cabeza" class="body-zone zona-cabeza" data-zone="Cabeza" name="Cabeza"
+          d="M 510 48 C 510 38, 516 32, 525 32 C 534 32, 540 38, 540 48 C 540 57, 535 66, 532 76 L 531 84 L 519 84 L 518 76 C 515 66, 510 57, 510 48 Z" />
+
+    <!-- Hombros Posterior -->
+    <path id="back-hombro-izq" class="body-zone zona-hombro" data-zone="Hombro" name="Hombro"
+          d="M 517 84 L 492 92 C 484 95, 476 101, 472 109 L 469 118 L 484 122 L 494 106 L 502 98 L 517 94 Z" />
+    <path id="back-hombro-der" class="body-zone zona-hombro" data-zone="Hombro" name="Hombro"
+          d="M 533 84 L 558 92 C 566 95, 574 101, 578 109 L 581 118 L 566 122 L 556 106 L 548 98 L 533 94 Z" />
+
+    <!-- Espalda (Solo Posterior) -->
+    <path id="back-espalda" class="body-zone zona-espalda" data-zone="Espalda" name="Espalda"
+          d="M 517 94 L 502 98 L 494 106 L 491 128 L 495 158 L 498 183 L 505 194 L 525 198 L 545 194 L 552 183 L 555 158 L 559 128 L 556 106 L 548 98 L 533 94 Z" />
+
+    <!-- Brazos Posterior -->
+    <path id="back-brazo-izq" class="body-zone zona-brazo" data-zone="Brazo" name="Brazo"
+          d="M 469 118 L 462 148 L 455 186 L 450 223 L 464 224 L 473 186 L 481 148 L 484 122 Z" />
+    <path id="back-brazo-der" class="body-zone zona-brazo" data-zone="Brazo" name="Brazo"
+          d="M 581 118 L 588 148 L 595 186 L 600 223 L 586 224 L 577 186 L 569 148 L 566 122 Z" />
+
+    <!-- Manos Posterior -->
+    <path id="back-mano-izq" class="body-zone zona-mano" data-zone="Mano" name="Mano"
+          d="M 450 223 L 444 248 C 442 256, 442 264, 446 268 C 450 272, 457 270, 460 262 L 464 243 L 464 224 Z" />
+    <path id="back-mano-der" class="body-zone zona-mano" data-zone="Mano" name="Mano"
+          d="M 600 223 L 606 248 C 608 256, 608 264, 604 268 C 600 272, 593 270, 590 262 L 586 243 L 586 224 Z" />
+
+    <!-- Cadera / Glúteos Posterior -->
+    <path id="back-cadera-izq" class="body-zone zona-cadera" data-zone="Cadera" name="Cadera"
+          d="M 498 183 L 487 194 C 484 203, 484 214, 487 223 L 498 234 L 525 236 L 525 198 L 505 194 Z" />
+    <path id="back-cadera-der" class="body-zone zona-cadera" data-zone="Cadera" name="Cadera"
+          d="M 552 183 L 563 194 C 566 203, 566 214, 563 223 L 552 234 L 525 236 L 525 198 L 545 194 Z" />
+
+    <!-- Muslos Posterior -->
+    <path id="back-muslo-izq" class="body-zone zona-muslo" data-zone="Muslo" name="Muslo"
+          d="M 487 223 L 488 255 C 489 280, 492 305, 494 330 L 518 330 C 522 305, 524 270, 525 236 L 498 234 Z" />
+    <path id="back-muslo-der" class="body-zone zona-muslo" data-zone="Muslo" name="Muslo"
+          d="M 563 223 L 562 255 C 561 280, 558 305, 556 330 L 532 330 C 528 305, 526 270, 525 236 L 552 234 Z" />
+
+    <!-- Rodillas (Corva) Posterior -->
+    <path id="back-rodilla-izq" class="body-zone zona-rodilla" data-zone="Rodilla" name="Rodilla"
+          d="M 494 330 L 493 348 C 493 358, 495 365, 496 368 L 516 368 C 518 363, 519 353, 518 330 Z" />
+    <path id="back-rodilla-der" class="body-zone zona-rodilla" data-zone="Rodilla" name="Rodilla"
+          d="M 556 330 L 557 348 C 557 358, 555 365, 554 368 L 534 368 C 532 363, 531 353, 532 330 Z" />
+
+    <!-- Pantorrillas (Gemelos) Posterior -->
+    <path id="back-pantorrilla-izq" class="body-zone zona-pantorrilla" data-zone="Pantorrilla" name="Pantorrilla"
+          d="M 496 368 C 493 388, 493 410, 498 438 L 514 438 C 518 410, 517 388, 516 368 Z" />
+    <path id="back-pantorrilla-der" class="body-zone zona-pantorrilla" data-zone="Pantorrilla" name="Pantorrilla"
+          d="M 554 368 C 557 388, 557 410, 552 438 L 536 438 C 532 410, 533 388, 534 368 Z" />
+
+    <!-- Tobillos (Tendón de Aquiles) Posterior -->
+    <path id="back-tobillo-izq" class="body-zone zona-tobillo" data-zone="Tobillo" name="Tobillo"
+          d="M 498 438 L 497 452 L 515 452 L 514 438 Z" />
+    <path id="back-tobillo-der" class="body-zone zona-tobillo" data-zone="Tobillo" name="Tobillo"
+          d="M 552 438 L 553 452 L 535 452 L 536 438 Z" />
+
+    <!-- Pies (Talón) Posterior -->
+    <path id="back-pie-izq" class="body-zone zona-pie" data-zone="Pie" name="Pie"
+          d="M 497 452 L 488 464 C 485 469, 490 472, 500 472 L 515 472 L 515 452 Z" />
+    <path id="back-pie-der" class="body-zone zona-pie" data-zone="Pie" name="Pie"
+          d="M 553 452 L 562 464 C 565 469, 560 472, 550 472 L 535 472 L 535 452 Z" />
+  </g>
+</svg>
